@@ -8,7 +8,7 @@ main(){
 
     cout << "Введіть 14 чисел:" << endl;
 
-    int array[14], array_replace[14], temp_num = 0;
+    int array[14], array_replace[14], temp_num = 0, max_num = 0, max_neg_num = -2147483648;
 
     for(int i = 0; i < 14; i++){ // enter array[]
         cin >> temp_num;
@@ -20,14 +20,27 @@ main(){
         
         array_replace[i] = 0;
         array[i] = temp_num;
+
+        
+        if (temp_num > max_num) {max_num = temp_num;} // max element
+
+        if (temp_num < 0 && temp_num > max_neg_num) {max_neg_num = temp_num;} // max negative element
     }
 
+    cout << endl << "Заданий массив:       ";
     for(int i = 0; i < 14; i++){
         cout << array[i];
     }
 
+    for (int k = 0; k < 14; k++){ // replase array[] num 
+        if      (k % 2 == 0 && array[k] < 0) {array_replace[k] = max_num;} 
+        else if (k % 2 != 0 && array[k] < 0) {array_replace[k] = max_neg_num;} 
+        else    {array_replace[k] = array[k];}
+    }
     
     for(int i = 0; i < 14; i++){
         cout << endl << array_replace[i];
     }
+
+    cout << endl << max_num << " " << max_neg_num;
 }

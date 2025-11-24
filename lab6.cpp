@@ -38,9 +38,9 @@ main(){
         else    {array_replace[k] = array[k];}
     }
     
-    for(int i = 0; i < 14; i++){
-        cout << endl << array_replace[i];
-    }
+    cout << endl << "Новоутворений массив: ";
 
-    cout << endl << max_num << " " << max_neg_num;
+    for (int n = 0; n < 14; n++) { // array_replace[]
+        cout << array_replace[n] << " ";
+    }
 }

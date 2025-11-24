@@ -29,7 +29,7 @@ main(){
     cout << endl << "Заданий массив:       ";
 
     for (int k = 0; k < 14; k++){ // replase array[] num || cout array[]
-        cout << array[k] << " ";
+        printf("%4d ", array[k]);
 
         if      (k % 2 == 0 && array[k] < 0) {array_replace[k] = max_num;} 
         else if (k % 2 != 0 && array[k] < 0) {array_replace[k] = max_neg_num;} 
@@ -37,8 +37,9 @@ main(){
     }
 
     cout << endl << "Новоутворений массив: ";
+    
 
     for (int n = 0; n < 14; n++) { // array_replace[]
-        cout << array_replace[n] << " ";
+        printf("%4d ", array[n]);
     }
 }

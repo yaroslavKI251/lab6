@@ -9,7 +9,6 @@ main(){
     cout << "Введіть 14 чисел:" << endl;
 
     int array[14], array_replace[14], temp_num = 0;
-
     for(int i = 0; i < 14; i++){ // enter array[]
         cin >> temp_num;
 

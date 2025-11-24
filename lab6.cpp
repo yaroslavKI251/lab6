@@ -6,11 +6,18 @@ main(){
     SetConsoleCP(65001);   
     SetConsoleOutputCP(65001);
 
-    int array[14], array_replace[14], temp_num = 0, max_num = 0, max_neg_num = -2147483648;
+    int size = 0;
 
-    cout << "Введіть 14 чисел:" << endl;
+    cout << "Введіть розмір массиву: ";
+    cin >> size;
+    if(cin.fail()){
+        cout << "err" << endl;
+        return 1;
+    }
 
-    for(int i = 0; i < 14; i++){ // enter array[]
+    int array[size], array_replace[size], temp_num = 0, max_num = 0, max_neg_num = -2147483648;
+
+    for(int i = 0; i < size; i++){ // enter array[]
         cin >> temp_num;
 
         if(cin.fail()){
@@ -28,7 +35,7 @@ main(){
 
     cout << endl << "Заданий массив:       ";
 
-    for (int k = 0; k < 14; k++){ // replase array[] num || cout array[]
+    for (int k = 0; k < size; k++){ // replase array[] num || cout array[]
         cout << array[k] << " ";
 
         if      (k % 2 == 0 && array[k] < 0) {array_replace[k] = max_num;} 
@@ -38,7 +45,7 @@ main(){
 
     cout << endl << "Новоутворений массив: ";
 
-    for (int n = 0; n < 14; n++) { // array_replace[]
+    for (int n = 0; n < size; n++) { // array_replace[]
         cout << array_replace[n] << " ";
     }
 }
